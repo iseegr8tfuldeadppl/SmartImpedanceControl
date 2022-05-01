@@ -1,0 +1,25 @@
+syms L1 L2 m1 m2 d1 d2 I1 I2 g real
+syms Fdx Fdy real
+
+Fd = [Fdx, Fdy];
+
+P1 = [ - L2*cos(th1 + th2) ;
+       - L2*sin(th1 + th2) ];
+    
+P2 = [ - L2*cos(th1 + th2) - L1*cos(th1) ;
+       - L2*sin(th1 + th2) - L1*sin(th1) ];
+
+M = [ I2 + d2*m2*L1*cos(th2) + m2*d2^2              , I2 + m2*d2^2   ;
+        ];
+      
+B = [       d2*m2*L1*sin(th2)*thdot1^2                                  ;
+     - d2*m2*L1*thdot2^2*sin(th2) - 2*m2*d2*L1*thdot1*thdot2*sin(th2) ];
+              
+G = [            - d2*g*m2*sin(th1 + th2)                       ;
+     -  g*m2*d2*sin(th1 + th2) - (m2*L1 + d1*m1)*g*sin(th1)];
+              
+F = [ Fd*P1 ;
+      Fd*P2 ];
+
+T = [    T2   ;
+         T1   ];
