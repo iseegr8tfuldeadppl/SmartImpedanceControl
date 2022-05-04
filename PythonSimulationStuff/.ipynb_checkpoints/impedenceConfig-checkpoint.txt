@@ -1,15 +1,15 @@
 
 [NEAT]
 fitness_criterion     = max
-fitness_threshold     = 0
+fitness_threshold     = 50
 pop_size              = 50
 reset_on_extinction   = False
 
 [DefaultGenome]
 # node activation options
-activation_default      = tanh
+activation_default      = softplus
 activation_mutate_rate  = 0.0
-activation_options      = tanh
+activation_options      = softplus
 
 # node aggregation options
 aggregation_default     = sum
